@@ -9,7 +9,7 @@ Accepted for [NeurIPS 2023](https://neurips.cc/virtual/2023/poster/71571)
 ## Authors:
 [Julien Siems](https://scholar.google.de/citations?user=rKgTTh8AAAAJ&hl=de) *, [Konstantin Ditschuneit](https://ditschuneit.de/konstantin/) *, [Winfried Ripken](https://winfried-ripken.github.io/) *, [Alma Lindborg](https://scholar.google.com/citations?user=IBrCbDoAAAAJ&hl=sv) *, [Maximilian Schambach](https://maxschambach.github.io/), Johannes Otterbach, [Martin Genzel](https://martingenzel.com/)
 
-* equal contribution
+\* equal contribution
 
 ## BibTeX
 ```
@@ -17,7 +17,7 @@ Accepted for [NeurIPS 2023](https://neurips.cc/virtual/2023/poster/71571)
  author = {Siems, Julien and Ditschuneit, Konstantin and Ripken, Winfried and Lindborg, Alma and Schambach, Maximilian and Otterbach, Johannes and Genzel, Martin},
  booktitle = {Advances in Neural Information Processing Systems},
  publisher = {Curran Associates, Inc.},
- title = {Increasing Confidence in Adversarial Robustness Evaluations},
+ title = {Curve Your Enthusiasm: Concurvity Regularization in Differentiable Generalized Additive Models},
  url = {https://neurips.cc/virtual/2023/poster/71571},
  volume = {37},
  year = {2023}
