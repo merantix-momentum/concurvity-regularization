@@ -1,0 +1,22 @@
+features:
+  - age
+  - workclass
+  - fnlwgt
+  - education
+  - educational-num
+  - marital-status
+  - occupation
+  - relationship
+  - race
+  - gender
+  - capital-gain
+  - capital-loss
+  - hours-per-week
+  - native-country
+name: adult
+numeric_scaler: minmax
+target_names: [income]
+test_ratio: 0.1
+train_ratio: 0.7
+type: classification
+val_ratio: 0.2

@@ -1,0 +1,35 @@
+defaults:
+  - hydra: default  # Load default hydra settings
+  - wandb_cfg@wandb: default
+  - datasets@dataset_cfg: load_ercot
+  - _self_
+
+wandb:
+  tags: [neuralprophet, training]
+  job_type: training
+  enabled: true
+
+model_cfg:
+  learning_rate: 1e-3
+  normalize: soft1
+  global_normalization: true
+  loss_func: huber
+  n_forecasts: 24 #4 * 24 * 7
+  n_lags: 6
+  optimizer: adamw
+  batch_size: 128
+  seasonality_mode: additive
+  daily_seasonality: 60
+  weekly_seasonality: 60
+  yearly_seasonality: 60
+  seasonality_reg: 0.095053335848129430
+  trend_reg: 0.002707318244564852
+  n_changepoints: 20
+  concurvity_reg_lambda: 1.0
+  concurvity_implementation: pairwise
+  eta_min: 1e-8
+
+train_cfg:
+  epochs: 15
+  checkpointing: true
+  num_workers: 0

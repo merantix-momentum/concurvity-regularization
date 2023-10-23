@@ -1,0 +1,26 @@
+defaults:
+  - boston_housing_train
+  - override hydra: optuna
+  - _self_
+
+wandb:
+  job_type: hpo
+  tags: [hpo, training, '${dataset.name}']
+
+model_cfg:
+  hidden_sizes:
+  hidden_dims:
+  num_hidden:
+  seed:      # Let the script choose a seed!
+train_cfg:
+  concurvity_reg_lambda_pairwise: 0
+
+hydra:
+  sweeper:
+    params:
+      model_cfg.hidden_dims: range(2,256)
+      model_cfg.num_hidden: range(1,6)
+      model_cfg.activation: choice(elu, gelu, relu)
+      train_cfg.learning_rate: tag(log,interval(1e-4,1e-1))
+      train_cfg.weight_decay: tag(log,interval(1e-6,1))
+      train_cfg.num_epochs: range(10,500)

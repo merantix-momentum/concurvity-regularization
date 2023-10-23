@@ -1,0 +1,16 @@
+defaults:
+  - _train
+  - datasets@dataset: adult
+  - _self_
+
+
+model_cfg:
+  hidden_sizes: [204, 204, 204, 204]
+  seed: 1
+  activation: gelu
+
+train_cfg:
+  num_epochs: 200
+  learning_rate: 0.002635490583147908
+  batch_size: 512
+  weight_decay: 0.001641348251776389

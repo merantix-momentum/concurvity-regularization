@@ -1,0 +1,40 @@
+defaults:
+  - hydra: default  # Load default hydra settings
+  - wandb_cfg@wandb: default
+  - datasets@dataset_cfg: synthetic_step
+  - _self_
+
+seed: 42
+
+wandb:
+  tags: [neuralprophet, training, '${dataset_cfg.name}', '${model_cfg.concurvity_implementation}']
+  job_type: training_${dataset_cfg.name}
+  enabled: true
+  group: neuralprophet_synthetic_step
+  name: conc_reg=${model_cfg.concurvity_reg_lambda}
+
+model_cfg:
+  learning_rate: 1e-3
+  normalize: soft1
+  global_normalization: true
+  loss_func: huber
+  n_forecasts: 168 # 24 * 7
+  n_lags: 0
+  optimizer: adamw
+  batch_size: 512
+  seasonality_mode: additive
+  daily_seasonality: 400
+  weekly_seasonality: 400
+  yearly_seasonality: false
+  eta_min: 1e-8
+  concurvity_reg_lambda: 0 #.01 #.1
+  seasonality_reg: 0
+  concurvity_implementation: pairwise
+  growth: off
+
+
+train_cfg:
+  epochs: 500
+  checkpointing: false
+  num_workers: 0
+  freq: H

@@ -1,0 +1,5 @@
+defaults:
+  - default
+
+tags: [sweep, mlp, training]
+group: sweep_neuralprophet_${now:%Y_%m_%d_%H_%M_%S}

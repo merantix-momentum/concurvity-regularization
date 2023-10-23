@@ -1,0 +1,15 @@
+defaults:
+  - _train
+  - datasets@dataset: support2
+  - _self_
+
+model_cfg:
+  hidden_sizes: [127,127,127]
+  seed: 1
+  activation: gelu
+
+train_cfg:
+  num_epochs: 30
+  learning_rate: 0.0034234402887428745
+  batch_size: 512
+  weight_decay: 0.010543820845992776

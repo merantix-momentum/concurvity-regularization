@@ -1,0 +1,28 @@
+defaults:
+  - hydra: default  # Load default hydra settings
+  - wandb_cfg@wandb: default
+  - _self_
+
+wandb:
+  tags: [toy_example, training, '${dataset.name}']
+  job_type: debug
+  enabled: true
+  group: ${dataset.name}
+  name: ${dataset.name}_reg_${train_cfg.concurvity_reg_lambda_pairwise}_${now:%Y_%m_%d_%H_%M_%S}
+
+model_cfg:
+  hidden_sizes: [128, 128, 128]
+  seed: 666
+  activation: gelu
+
+train_cfg:
+  num_epochs: 10
+  learning_rate: 1e-3
+  batch_size: 256
+  concurvity_reg_lambda_pairwise: 0.0
+  concurvity_reg_kind: corr
+  concurvity_reg_start_step_ratio: 0.05
+  weight_decay: 1e-4
+  max_steps_to_track_per_epoch: 5
+  concurvity_reg_eps: 1e-12
+  l1_reg: 0.0

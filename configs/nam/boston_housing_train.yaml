@@ -1,0 +1,15 @@
+defaults:
+  - _train
+  - datasets@dataset: boston_housing
+  - _self_
+
+model_cfg:
+  hidden_sizes: [75, 75, 75, 75, 75, 75]
+  seed: 1
+  activation: elu
+
+train_cfg:
+  num_epochs: 91
+  learning_rate: 0.0007931369634613918
+  batch_size: 128
+  weight_decay: 0.017868161134740792

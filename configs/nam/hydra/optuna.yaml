@@ -1,0 +1,13 @@
+defaults:
+  - override sweeper: optuna
+  - override launcher: joblib
+  - _self_
+
+launcher:
+  n_jobs: 2
+sweeper:
+  n_trials: 500
+  n_jobs: 4
+  sampler:
+    n_startup_trials: 50
+    seed: 1

@@ -1,0 +1,7 @@
+name: credit_card_fraud
+train_ratio: 0.7
+val_ratio: 0.2
+test_ratio: 0.1
+target_names: [Class]
+type: classification
+numeric_scaler: minmax

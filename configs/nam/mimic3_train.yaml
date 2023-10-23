@@ -1,0 +1,15 @@
+defaults:
+  - _train
+  - datasets@dataset: mimic3
+  - _self_
+
+model_cfg:
+  hidden_sizes: [168, 168, 168]
+  seed: 1
+  activation: gelu
+
+train_cfg:
+  num_epochs: 23
+  learning_rate: 0.0038823471436275968
+  batch_size: 512
+  weight_decay: 0.0011026261966442905

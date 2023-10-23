@@ -1,0 +1,21 @@
+features:
+  - crim
+  - zn
+  - indus
+  - chas
+  - nox
+  - rm
+  - age
+  - dis
+  - rad
+  - tax
+  - ptratio
+  - b
+  - lstat
+name: boston_housing
+numeric_scaler: minmax
+target_names: [medv]
+test_ratio: 0.1
+train_ratio: 0.7
+type: regression
+val_ratio: 0.2

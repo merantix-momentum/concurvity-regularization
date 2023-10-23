@@ -1,0 +1,7 @@
+dataset: datasets.time_series.synthetic.step_5000
+name: step
+date_column: ds
+target_column: y
+normalize: true
+create_split: true
+val_plot_length: 168

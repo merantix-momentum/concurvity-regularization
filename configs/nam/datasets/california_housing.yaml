@@ -1,0 +1,17 @@
+features:
+  - longitude
+  - latitude
+  - housing_median_age
+  - total_rooms
+  - total_bedrooms
+  - population
+  - households
+  - median_income
+  - ocean_proximity
+name: california_housing
+numeric_scaler: minmax
+target_names: [median_house_value]
+test_ratio: 0.1
+train_ratio: 0.7
+type: regression
+val_ratio: 0.2

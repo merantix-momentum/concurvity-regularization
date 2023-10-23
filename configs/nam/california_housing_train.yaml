@@ -1,0 +1,15 @@
+defaults:
+  - _train
+  - datasets@dataset: california_housing
+  - _self_
+
+model_cfg:
+  hidden_sizes: [72, 72, 72, 72, 72]
+  seed: 1
+  activation: relu
+
+train_cfg:
+  num_epochs: 39
+  learning_rate: 0.009462392090681122
+  batch_size: 512
+  weight_decay: 3.733248952851743e-06

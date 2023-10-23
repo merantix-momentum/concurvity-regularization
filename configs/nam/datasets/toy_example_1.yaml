@@ -1,0 +1,11 @@
+n_features: 2
+n_datapoints: 10000
+name: linear_correlated
+weights: [1.0, 0.0]
+sampling_correlation: 0.0
+train_ratio: 0.7
+val_ratio: 0.2
+test_ratio: 0.1
+type: regression
+target_names: [target_0]
+numeric_scaler: minmax

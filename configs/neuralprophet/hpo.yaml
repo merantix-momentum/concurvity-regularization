@@ -1,0 +1,43 @@
+defaults:
+  - hydra: default  # Load default hydra settings
+  - wandb_cfg@wandb: sweep
+  - datasets@dataset_cfg: ETTh1
+  - _self_
+
+wandb:
+  tags: [neuralprophet, hpo]
+  job_type: hpo
+  enabled: true
+  group:
+
+hpo_cfg:
+  n_startup_trials: 10
+  hpo_target: MAE_val
+
+model_cfg:
+  learning_rate: 0.001
+  normalize: soft1
+  global_normalization: true
+  loss_func: huber
+  n_forecasts: 672 #4 * 24 * 7
+  n_lags: 0
+  optimizer: adamw
+  batch_size: 128
+  seasonality_mode: additive
+  daily_seasonality: 40
+  weekly_seasonality: 40
+  yearly_seasonality: 40
+  hidden_sizes: [10, 10]
+  seasonality_reg: 1e-2
+  trend_reg: 5e-1
+  n_changepoints: 20
+  batch_norm_first: true
+  weight_decay: 1e-6
+  eta_min: 1e-6
+  dropout: 1e-6
+
+valid_p: 0.2
+train_cfg:
+  epochs: 50
+  checkpointing: true
+  num_workers: 0
