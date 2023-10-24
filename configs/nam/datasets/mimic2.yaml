@@ -1,0 +1,26 @@
+features:
+  - Age
+  - GCS
+  - SBP
+  - HR
+  - Temperature
+  - PFratio
+  - Renal
+  - Urea
+  - WBC
+  - CO2
+  - Na
+  - K
+  - Bilirubin
+  - AdmissionType
+  - AIDS
+  - MetastaticCancer
+  - Lymphoma
+name: mimic2
+numeric_scaler: minmax
+target_names:
+  - HospitalMortality
+test_ratio: 0.2
+train_ratio: 0.6
+type: classification
+val_ratio: 0.2
